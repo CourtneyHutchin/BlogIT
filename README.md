@@ -6,7 +6,7 @@ This project is a business template for a client to utilize their own URL and bl
 # Social Media
 **Purpose:** 
 Clients will have access through Identity Management, passwords, and Two-Factor Authentication. They will be able to create multiple
-differently styles of media and present them to their public.
+different styles of media and present them to their target audience.
 
 ## Coding Guidelines
 See [Guidelines](CodeGuidelines.md)
