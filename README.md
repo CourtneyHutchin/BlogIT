@@ -12,7 +12,6 @@ different styles of media and present them to their target audience.
 See [Guidelines](CodeGuidelines.md)
 
 ## Contributors
-
 - [David Rodriguez-Jenkins](https://github.com/davidrodjen)
 - [Courtney Hutchin](https://github.com/CourtneyHutchin)
 
