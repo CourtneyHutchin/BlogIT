@@ -32,7 +32,7 @@ namespace BlogIT
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
             // Had to add this to connect correctly to creating the roles
-            services.AddDefaultIdentity<IdentityUser>()
+            services.AddDefaultIdentity<IdentityUser>(IdentityHelper.SetIdentityOptions)
                             .AddRoles<IdentityRole>()
                             .AddEntityFrameworkStores<ApplicationDbContext>();
             // blocking this area off for future reference
