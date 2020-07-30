@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using BlogIT.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -12,5 +13,7 @@ namespace BlogIT.Data
             : base(options)
         {
         }
+
+        public DbSet<BlogIT.Models.BlogPost> BlogPost { get; set; }
     }
 }
