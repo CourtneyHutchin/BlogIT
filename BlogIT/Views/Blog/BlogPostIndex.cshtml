@@ -1,0 +1,53 @@
+﻿@model IEnumerable<BlogIT.Models.BlogPost>
+
+<p>
+    <a asp-action="Add">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Text)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Signature)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (BlogPost blog in ViewBag.BlogBag) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => blog.Category)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => blog.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => blog.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => blog.Text)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => blog.Signature)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@blog.BlogId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@blog.BlogId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@blog.BlogId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
