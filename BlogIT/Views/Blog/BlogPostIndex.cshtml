@@ -3,7 +3,7 @@
 <p>
     <a asp-action="Add">Create New</a>
 </p>
-<table class="table">
+@*<table class="table">
     <thead>
         <tr>
             <th>
@@ -24,30 +24,32 @@
             <th></th>
         </tr>
     </thead>
-    <tbody>
+    <tbody>*@
 @foreach (BlogPost blog in ViewBag.BlogBag) {
-        <tr>
-            <td>
+        @*<tr>*@
+    <div class="jumbotron text-center">
+            <p class="lead">
                 @Html.DisplayFor(modelItem => blog.Category)
-            </td>
-            <td>
+            </p>
+            <h1 class="display-1" style="color:#EB6864">
                 @Html.DisplayFor(modelItem => blog.Title)
-            </td>
-            <td>
+            </h1>
+            <p class="lead">
                 @Html.DisplayFor(modelItem => blog.Description)
-            </td>
-            <td>
+            </p>
+            <p>
                 @Html.DisplayFor(modelItem => blog.Text)
-            </td>
-            <td>
+            </p>
+            <h5>
                 @Html.DisplayFor(modelItem => blog.Signature)
-            </td>
+            </h5>
             <td>
                 <a asp-action="Edit" asp-route-id="@blog.BlogId">Edit</a> |
                 <a asp-action="Details" asp-route-id="@blog.BlogId">Details</a> |
                 <a asp-action="Delete" asp-route-id="@blog.BlogId">Delete</a>
             </td>
-        </tr>
+    </div>
+        @*</tr>*@
 }
-    </tbody>
-</table>
+    @*</tbody>*@
+@*</table>*@
