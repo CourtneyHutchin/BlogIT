@@ -37,7 +37,7 @@ namespace BlogIT.Controllers
             {
                 await BlogDB.Add(blog, _context);
                 TempData["Message"] = $"{blog.Title} added successfully";
-                return RedirectToAction(nameof(BlogPost));
+                return RedirectToAction(nameof(BlogPostIndex));
             }
 
             return View();
