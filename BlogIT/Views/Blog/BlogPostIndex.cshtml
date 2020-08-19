@@ -1,8 +1,13 @@
 ﻿@model IEnumerable<BlogIT.Models.BlogPost>
 
-<p>
-    <a asp-action="Add">Create New</a>
-</p>
+@if (User.IsInRole("Admin"))
+{ 
+    <p>
+
+	    <a asp-action="Add">Create New</a>
+    </p>
+}
+
 @*<table class="table">
     <thead>
         <tr>
@@ -43,11 +48,14 @@
             <h5>
                 @Html.DisplayFor(modelItem => blog.Signature)
             </h5>
-            <td>
-                <a asp-action="Edit" asp-route-id="@blog.BlogId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@blog.BlogId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@blog.BlogId">Delete</a>
-            </td>
+            @if (User.IsInRole("Admin")) 
+            { 
+                <td>
+                    <a asp-action="Edit" asp-route-id="@blog.BlogId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@blog.BlogId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@blog.BlogId">Delete</a>
+                </td>
+            }
     </div>
         @*</tr>*@
 }
