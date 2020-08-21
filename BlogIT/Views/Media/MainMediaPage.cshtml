@@ -5,40 +5,24 @@
 }
 
 <div class="text-center">
-	<h1 class="display-4">My Media</h1>
-	<p>Take a moment to check out my content!</p>
+	<h1 class="display-4">Media</h1>
+	<p>Take a moment to check out the lastest tech news!</p>
 </div>
 
-
-<div class="text-md-left border border-dark p-1">
-	<p>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-		Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-		Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-		Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-	</p>
-</div>
-
-
+<br />
 
 @foreach (NewsAPI.Models.Article article in Model)
 {
-	<div>
-	<p class="lead">
-		@Html.DisplayFor(modelItem => article.Title)
-	</p>
-	<h1 class="display-1" style="color:#EB6864">
-		@Html.DisplayFor(modelItem => article.Author)
-	</h1>
-	<p class="lead">
-		@Html.DisplayFor(modelItem => article.Description)
-	</p>
-	<p>
-		@Html.DisplayFor(modelItem => article.Url)
-	</p>
-	<p>
-		@Html.DisplayFor(modelItem => article.PublishedAt)
-	</p>
-
+<div class="card" style="color:white; background-color: #404040; width: 18rem; float:left; margin-left: 50px; margin-bottom: 25px;">
+	<div class="card-body" >
+		<h5 class="card-title">
+			<a href="@article.Url" style="color:#EB6864">@Html.DisplayFor(modelItem => article.Title)</a>
+		</h5>
+		<p class="card-text">
+			@Html.DisplayFor(modelItem => article.Author)
+			@Html.DisplayFor(modelItem => article.Description)
+			<br />
+		<p style="color:#BEBEBE">@Html.DisplayFor(modelItem => article.PublishedAt)</p>
 	</div>
+</div>
 }

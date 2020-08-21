@@ -23,8 +23,8 @@ namespace BlogIT.Controllers
             var newsApiClient = new NewsApiClient("5a6f078ea39446cda5b9698ccd4e26be");
             var articlesResponse = newsApiClient.GetEverything(new EverythingRequest
             {
-                Q = "Apple",
-                SortBy = SortBys.Popularity,
+                Q = "Technology",
+                SortBy = SortBys.Popularity, 
                 Language = Languages.EN,
                 From = new DateTime(2020, 7, 21)
             });
