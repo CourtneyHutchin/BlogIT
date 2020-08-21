@@ -1,48 +1,62 @@
 ﻿@model BlogIT.Models.BlogPost
 
-<h4>BlogPost</h4>
-<hr />
+
+@{
+	ViewData["Title"] = "BlogPost";
+}
+
+@if (ViewData["Message"] != null)
+{
+	<div class="alert alert-dismissible alert-success">
+		<button type="button" class="close" data-dismiss="alert">&times;</button>
+		<strong>Well done!</strong><p>You successfully edited this page!</p>
+	</div>
+}
+
+<br />
+
 <div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="BlogId" />
-            <div class="form-group">
-                <label asp-for="Category" class="control-label"></label>
-                <input asp-for="Category" class="form-control" />
-                <span asp-validation-for="Category" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Title" class="control-label"></label>
-                <input asp-for="Title" class="form-control" />
-                <span asp-validation-for="Title" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
-                <input asp-for="Description" class="form-control" />
-                <span asp-validation-for="Description" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Text" class="control-label"></label>
-                <input asp-for="Text" class="form-control" />
-                <span asp-validation-for="Text" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Signature" class="control-label"></label>
-                <input asp-for="Signature" class="form-control" />
-                <span asp-validation-for="Signature" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
+	<div class="col-md-4">
+		<form asp-action="Edit">
+			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+			<input type="hidden" asp-for="BlogId" />
+			<div class="form-group">
+				<label asp-for="Category" class="control-label"></label>
+				<input asp-for="Category" class="form-control" />
+				<span asp-validation-for="Category" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Title" class="control-label"></label>
+				<input asp-for="Title" class="form-control" />
+				<span asp-validation-for="Title" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Description" class="control-label"></label>
+				<input asp-for="Description" class="form-control" />
+				<span asp-validation-for="Description" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Text" class="control-label"></label>
+				<input asp-for="Text" class="form-control" />
+				<span asp-validation-for="Text" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Signature" class="control-label"></label>
+				<input asp-for="Signature" class="form-control" />
+				<span asp-validation-for="Signature" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<input type="submit" value="Save" class="btn btn-primary" />
+			</div>
+		</form>
+	</div>
 </div>
 
 <div>
-    <a asp-action="BlogPostIndex">Back to List</a>
+	<a asp-action="BlogPostIndex">Back to List</a>
 </div>
 
+
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+	@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
