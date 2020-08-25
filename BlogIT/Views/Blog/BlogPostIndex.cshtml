@@ -2,10 +2,9 @@
 
 @if (User.IsInRole("Admin"))
 { 
-    <p>
-
-	    <a asp-action="Add">Create New</a>
-    </p>
+	<p>
+		<input type="button" class="btn btn-outline-primary" value="New Post" onclick="location.href='@Url.Action("Add")'" />
+	</p>
 }
 
 @*<table class="table">
@@ -50,10 +49,10 @@
             </h5>
             @if (User.IsInRole("Admin")) 
             { 
-                <td>
-                    <a asp-action="Edit" asp-route-id="@blog.BlogId">Edit</a> |
-                    <a asp-action="Delete" asp-route-id="@blog.BlogId">Delete</a>
-                </td>
+	<div style="margin-top:2em;">
+		<input type="button" class="btn btn-outline-primary" value="Edit" onclick="location.href='@Url.Action("Edit", new {id = blog.BlogId })'" />
+		<input type="button" class="btn btn-outline-primary" value="Delete" onclick="location.href='@Url.Action("Delete", new {id = blog.BlogId })'" />
+	</div>
             }
     </div>
         @*</tr>*@
