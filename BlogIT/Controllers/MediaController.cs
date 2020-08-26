@@ -20,14 +20,20 @@ namespace BlogIT.Controllers
         [HttpGet]
         public IActionResult MainMediaPage()
         {
+            //Date Time to get current day
+            DateTime dateNow = DateTime.Today;
+
             var newsApiClient = new NewsApiClient("5a6f078ea39446cda5b9698ccd4e26be");
             var articlesResponse = newsApiClient.GetEverything(new EverythingRequest
             {
                 Q = "Technology",
-                SortBy = SortBys.Popularity, 
+                SortBy = SortBys.Popularity,
                 Language = Languages.EN,
-                From = new DateTime(2020, 7, 21)
-            });
+                //Add DateNow.addDays to subtract month value so always current
+                From = dateNow.AddDays(-30),
+                PageSize = 9
+
+            }) ;
             if (articlesResponse.Status == Statuses.Ok)
             {
                 return View(articlesResponse.Articles);
