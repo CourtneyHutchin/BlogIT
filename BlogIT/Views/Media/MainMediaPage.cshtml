@@ -13,7 +13,7 @@
 
 @foreach (NewsAPI.Models.Article article in Model)
 {
-<div class="card" style="color:white; background-color: #404040; width: 18rem; float:left; margin-left: 50px; margin-bottom: 25px;">
+<div class="card" style="color:white; background-color: #404040; width: 18rem; height: 25rem; float:left; margin-left: 50px; margin-bottom: 5.5em;">
 	<div class="card-body" >
 		<h5 class="card-title">
 			<a href="@article.Url" style="color:#EB6864">@Html.DisplayFor(modelItem => article.Title)</a>
