@@ -2,27 +2,47 @@
 	ViewData["Title"] = "Home Page";
 }
 
+	<style>
+		body {
+			background-image: url('./photos/LandingPageImageBlogIT.png');
+			background-repeat: no-repeat;
+			background-size:cover;
+			color: white;
+		}
+
+		h2 {
+			animation: color-change 6s infinite;
+		}
+
+		@@keyframes color-change {
+          0% { color: white; }
+          25% { color: #FF4654;}
+          50% { color: white; }
+		  75% { color: #FF4654; }
+        }
+	</style>
+
+
 <div class="text-center">
-	<h1 class="display-4"><strong>Jane Doe</strong></h1>
-	<blockquote class="blockquote">
+	<h1 class="display-4" style="margin:1em"><strong>Jane Doe</strong></h1>
+	<blockquote class="blockquote" style="margin:1em">
 		<p>"Many of life's failures are people who did not realize how close they were to success when they gave up."</p>
-		<footer class="blockquote-footer">Thomas Edison<cite title="Source Title"> Life </cite></footer>
+		<footer class="blockquote-footer" style="color:white">Thomas Edison<cite title="Source Title"> Life </cite></footer>
 	</blockquote>
 </div>
 
 
 
-<img src="./photos/city-quintin-gellar.jpg" style="width:400px;margin-top:5em;margin-left:15%" />
+@*<img src="./photos/city-quintin-gellar.jpg" style="width:400px;margin-top:5em;margin-left:15%" />*@
 
-<p style="border-style:solid;border-color:lightpink;margin-left:60%">
-	Welcome to my blog! I, Jane, am a city dweling and life loving woman of the world! Take a break and have a little
-	fun with me by checking out my adventures.
-</p>
+<h2 class="text-center" style="margin-top:4em">
+	JANE DOE IS A FREELANCE COMPUTER PROGRAMMER, ENTREPRENEUR AND TECHNOLOGY INFLUENCER WORKING OUT OF THE PACIFIC NORTHWEST
+</h2>
 
-<div>
+@*<div>
 	<img src="./photos/lit-street-sunyu-kim.jpg" style="width:400px;height:500px;margin-top:5em; margin-left:55%">
-</div>
+</div>*@
 
-<div>
+@*<div>
 	<img src="./photos/subway-snapwire.jpg" style="width:400px;align-content:center;margin-top:5em;margin-left:20%" />
-</div>
+</div>*@
