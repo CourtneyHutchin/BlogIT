@@ -9,6 +9,11 @@ namespace BlogIT.Controllers
 {
     public class AboutMeController : Controller
     {
+        /// <summary>
+        /// Standard return view
+        /// Auto-generated
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IActionResult AboutMePage()
         {
