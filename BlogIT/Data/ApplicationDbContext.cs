@@ -14,6 +14,9 @@ namespace BlogIT.Data
         {
         }
 
+        /// <summary>
+        /// Get Set Blogpost Model
+        /// </summary>
         public DbSet<BlogIT.Models.BlogPost> BlogPost { get; set; }
     }
 }

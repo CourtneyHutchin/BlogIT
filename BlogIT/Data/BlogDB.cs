@@ -9,7 +9,12 @@ namespace BlogIT.Data
 {
     public class BlogDB
     {
-        // Add
+        /// <summary>
+        /// Add Blog Item to DB
+        /// </summary>
+        /// <param name="blog"></param>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public static async Task<BlogPost> Add(BlogPost blog, ApplicationDbContext context)
         {
             await context.AddAsync(blog);
@@ -18,7 +23,13 @@ namespace BlogIT.Data
             return blog;
         }
 
-        // Delete
+        /// <summary>
+        /// Delete Blog post from DB
+        /// Save Async
+        /// </summary>
+        /// <param name="blog"></param>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public async static Task Delete(BlogPost blog, ApplicationDbContext context)
         {
             await context.AddAsync(blog);
@@ -26,7 +37,12 @@ namespace BlogIT.Data
             await context.SaveChangesAsync();
         }
 
-        // Edit
+        /// <summary>
+        /// Edit currently selected Blog Post
+        /// </summary>
+        /// <param name="blog"></param>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public static async Task<BlogPost> Edit(BlogPost blog, ApplicationDbContext context)
         {
             await context.AddAsync(blog);
@@ -35,7 +51,12 @@ namespace BlogIT.Data
             return blog;
         }
 
-        // Get a list of all blog items
+        /// <summary>
+        /// Pull list of all blog items
+        /// in DB Context Blog Item
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public static async Task<List<BlogPost>> GetAllBlogItems(ApplicationDbContext context)
         {
             List<BlogPost> blog = await (from BlogPost in context.BlogPost
@@ -44,7 +65,13 @@ namespace BlogIT.Data
 
         }
 
-        // Get blog post by id
+        /// <summary>
+        /// Pull Blog Post by ID num
+        /// by ApDBcontext
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public static async Task<BlogPost> GetBlogPostById(int id, ApplicationDbContext context)
         {
             BlogPost blog = await (from BlogPost in context.BlogPost
