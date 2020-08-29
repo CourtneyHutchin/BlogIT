@@ -19,6 +19,8 @@ namespace BlogIT.Models
             options.SignIn.RequireConfirmedPhoneNumber = false;
 
             // Set Password strength
+            // This can be modified by must have
+            // New Migration introduced
             options.Password.RequireDigit = true;
             options.Password.RequireLowercase = false;
             options.Password.RequireUppercase = false;
@@ -36,6 +38,7 @@ namespace BlogIT.Models
             {
                 bool doesRoleExist = await roleManager.RoleExistsAsync(role);
 
+                // If false create a new role
                 if (!doesRoleExist)
                 {
                     await roleManager.CreateAsync(new IdentityRole(role));
