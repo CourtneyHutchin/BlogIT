@@ -10,6 +10,10 @@ namespace BlogIT.Controllers
 {
     public class BlogController : Controller
     {
+        /// <summary>
+        /// Set the readonly context so it cannot
+        /// be externally edited
+        /// </summary>
         private readonly ApplicationDbContext _context;
 
         public BlogController(ApplicationDbContext context)
@@ -17,19 +21,32 @@ namespace BlogIT.Controllers
             _context = context;
         }
 
+        /// <summary>
+        /// Create a populated viewbag for all the Blog Posts
+        /// </summary>
+        /// <returns></returns>
         public async Task<IActionResult> BlogPostIndex()
         {
             ViewBag.BlogBag = await BlogDB.GetAllBlogItems(_context);
             return View();
         }
 
-
+        /// <summary>
+        /// Get the View for the Add
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IActionResult Add() 
         {
             return View();
         }
 
+        /// <summary>
+        /// Confirm action result for
+        /// adding Blog object to DB and direct view
+        /// </summary>
+        /// <param name="blog"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<IActionResult> Add(BlogPost blog) 
         {
@@ -43,6 +60,13 @@ namespace BlogIT.Controllers
             return View();
         }
 
+        /// <summary>
+        /// Get Blog object for delete
+        /// Check for null and return
+        /// if found
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet]
         public async Task<IActionResult> Delete(int id)
         {
@@ -56,6 +80,13 @@ namespace BlogIT.Controllers
             return View(blog);
         }
 
+        /// <summary>
+        /// Process Delete with DB
+        /// Return if complete with
+        /// Tempdata context message
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpPost]
         [ActionName("Delete")]
         public async Task<IActionResult> DeleteConfirmed(int id)
@@ -66,6 +97,12 @@ namespace BlogIT.Controllers
             return RedirectToAction(nameof(BlogPostIndex));
         }
 
+        /// <summary>
+        /// Get Blog object for edit
+        /// by ID value, if null return 404
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet]
         public async Task<IActionResult> Edit(int? id)
         {
@@ -84,6 +121,14 @@ namespace BlogIT.Controllers
             return View(blog);
         }
 
+        /// <summary>
+        /// Post edit on valid model,
+        /// return confirm temp message
+        /// converted to alert message
+        /// on actual site usage
+        /// </summary>
+        /// <param name="blog"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<IActionResult> Edit(BlogPost blog)
         {
