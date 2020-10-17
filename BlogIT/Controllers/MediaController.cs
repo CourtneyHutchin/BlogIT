@@ -23,7 +23,7 @@ namespace BlogIT.Controllers
             //Date Time to get current day
             DateTime dateNow = DateTime.Today;
 
-            var newsApiClient = new NewsApiClient("5a6f078ea39446cda5b9698ccd4e26be");
+            var newsApiClient = new NewsApiClient("");
             var articlesResponse = newsApiClient.GetEverything(new EverythingRequest
             {
                 Q = "Technology",
